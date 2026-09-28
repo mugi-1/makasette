@@ -1,0 +1,19 @@
+@use "../foundation/variables" as *;
+@use "../foundation/breakpoints" as g;
+
+/*!
+layout > container
+------------------------------
+*/
+.l-container-s {
+  @include g.mq() {
+  }
+}
+
+.l-container {
+  padding-inline: 20px;
+
+  @include g.mq() {
+    padding-inline: clamp(20px, calc(14.88vw - 94.28px), 120px);
+  }
+}

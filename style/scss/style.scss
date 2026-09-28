@@ -1,0 +1,27 @@
+// style.scss
+@use "foundation/reset";
+@use "foundation/variables" as *;
+
+@use "foundation/breakpoints";
+@use "foundation/base";
+
+@use "layout/header";
+@use "layout/footer";
+@use "layout/container";
+
+@use "object/component/button";
+@use "object/component/cta";
+@use "object/component/top-section-title";
+@use "object/component/page-section-title";
+@use "object/component/page-title";
+@use "object/component/animation";
+
+@use "object/project/hero";
+@use "object/project/top";
+
+@use "object/project/service";
+@use "object/project/howtouse";
+@use "object/project/price";
+@use "object/project/faq";
+
+@use "object/utility/utility";

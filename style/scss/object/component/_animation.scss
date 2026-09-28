@@ -1,0 +1,198 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/breakpoints" as g;
+/*!
+component > animation
+------------------------------
+*/
+
+.c-fade {
+  opacity: 0;
+  transition:
+    transform 0.3s ease-out,
+    opacity 0.3s ease-out;
+
+  &--up {
+    transform: translateY(50px);
+  }
+
+  &--soft-up {
+    transform: translateY(30px) scale(0.9);
+  }
+  &--left {
+    transform: translateX(-300px);
+    transition:
+      transform 0.2s ease-out,
+      opacity 0.2s ease-out;
+  }
+
+  &--soft-left {
+    transform: translateX(-50px) scale(0.9);
+
+    transition:
+      transform 0.5s ease-out,
+      opacity 0.5s ease-out;
+  }
+}
+
+.c-fade.is-show {
+  opacity: 1;
+  transform: none;
+  transition-delay: var(--delay, 0s);
+}
+
+.c-bounce {
+  opacity: 0;
+}
+
+.c-bounce.is-show {
+  animation: bounce-animation 0.5s ease-out;
+  animation-fill-mode: both;
+
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes bounce-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  80% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.c-pop {
+  opacity: 0;
+  transform: scale(0.5);
+  transition:
+    transform 0.3s ease-out,
+    opacity 0.3s ease-out;
+}
+.c-pop.is-show {
+  opacity: 1;
+  transform: none;
+  transition-delay: var(--delay, 0s);
+}
+
+.c-number-swing {
+  &--right {
+    --rotate: 10deg;
+  }
+
+  &--left {
+    --rotate: -8deg;
+  }
+
+  @include g.mq() {
+    transform: rotate(var(--rotate));
+  }
+}
+.c-number-swing.is-show {
+  animation: number-swing-sp 0.3s ease-out;
+  @include g.mq() {
+    animation: number-swing-pc 0.3s ease-out;
+  }
+  animation-fill-mode: both;
+  animation-delay: var(--delay, 0s);
+}
+
+// SP
+@keyframes number-swing-sp {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(calc(var(--rotate) * 2));
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+// PC
+@keyframes number-swing-pc {
+  0% {
+    transform: rotate(var(--rotate));
+  }
+
+  50% {
+    transform: rotate(calc(var(--rotate) * 3));
+  }
+
+  100% {
+    transform: rotate(var(--rotate));
+  }
+}
+
+.c-emphasis {
+  transform: none;
+}
+
+.c-emphasis.is-show {
+  animation: emphasis-animation 0.7s ease-out;
+  animation-fill-mode: both;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes emphasis-animation {
+  0% {
+    transform: scale(0.95);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.c-pop-in {
+  transform: none;
+  opacity: 0;
+}
+
+.c-pop-in.is-show {
+  animation: pop-in-animation 0.5s ease-out;
+  animation-fill-mode: both;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes pop-in-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

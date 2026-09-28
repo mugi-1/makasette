@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Makasette</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/css/style.css" />
+    <script type="module" src="./js/script.js"></script>
+  </head>
+  <body>
+    <header class="l-header js-header">
+      <div class="l-header_logo">
+        <a
+          href="./index.html"
+          class="l-header_logo-link"
+          aria-label="トップページへ"
+        >
+          <img
+            src="./image/logo.png"
+            width="627"
+            height="253"
+            alt="makasette - マカセッテ"
+            decoding="async"
+          />
+        </a>
+      </div>
+      <nav class="l-header_nav js-menu-nav">
+        <ul class="l-header_account-list">
+          <li class="l-header_account-item">
+            <a href="#" class="l-header_account-link">ログイン</a>
+          </li>
+          <li class="l-header_account-item">
+            <a href="#" class="l-header_account-link">会員登録</a>
+          </li>
+        </ul>
+        <ul class="l-header_menu-list">
+          <li class="l-header_menu-item">
+            <a href="./service.html" class="l-header_menu-link">service</a>
+          </li>
+          <li class="l-header_menu-item">
+            <a href="./how-to-use.html" class="l-header_menu-link"
+              >how to use</a
+            >
+          </li>
+          <li class="l-header_menu-item">
+            <a href="./price.html" class="l-header_menu-link">price</a>
+          </li>
+          <li class="l-header_menu-item">
+            <a href="./faq.html" class="l-header_menu-link">faq</a>
+          </li>
+        </ul>
+      </nav>
+      <button
+        class="l-header_hamburger-button js-hamburger-button"
+        type="button"
+        aria-label="メニューを開く"
+      >
+        <span class="l-header_humburger-line"></span>
+        <span class="l-header_humburger-line"></span>
+        <span class="l-header_humburger-line"></span>
+      </button>
+    </header>
+
+    <div
+      class="c-page-title l-container js-title-animation c-fade c-fade--left"
+    >
+      <p class="c-page-title_en">price</p>
+      <h1 class="c-page-title_ja">料金について</h1>
+    </div>
+
+    <section class="p-price-structure l-container">
+      <h2
+        class="c-page-section-title js-section-title js-show c-fade c-fade--up"
+      >
+        料金の仕組み
+      </h2>
+      <ul
+        class="p-price-structure_list js-delay-group"
+        data-delay-interval="0.8"
+      >
+        <li class="p-price-structure_item js-show c-fade c-fade--up">
+          <span
+            class="p-price-structure_badge p-price-structure_badge__free js-price-structure_badge js-delay"
+            >無料</span
+          >
+
+          <p class="p-price-structure_text">
+            ・商品のチェック
+            <span class="u-br">・重積りの作成</span>
+          </p>
+        </li>
+        <li class="p-price-structure_item js-show c-fade c-fade--up">
+          <span
+            class="p-price-structure_badge js-price-structure_badge js-delay"
+            >有料</span
+          >
+          <p class="p-price-structure_text">・出品準備料金</p>
+        </li>
+        <li
+          class="p-price-structure_item js-price-structure_item js-show c-fade c-fade--up"
+        >
+          <span
+            class="p-price-structure_badge js-price-structure_badge js-delay"
+            >有料</span
+          >
+          <p class="p-price-structure_text">
+            <span class="p-price-structure_text_color">オプション</span
+            ><span class="u-br">・出品作業料金</span>
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="p-price-base l-container">
+      <h2
+        class="c-page-section-title js-section-title js-show c-fade c-fade--up"
+      >
+        出品準備料金
+      </h2>
+      <p class="p-price-base_catch js-show c-fade c-fade--up">
+        出品から発送まで「マカセッテ」が承ります。
+      </p>
+
+      <div class="p-price-base_contents">
+        <p class="p-price-base_text js-show c-fade c-fade--up">
+          料金は、お申し込みいただく梱包キットのサイズにより異なります。
+        </p>
+        <p class="p-price-table_title js-show c-fade c-fade--up">
+          梱包キット一箱あたり
+        </p>
+        <div class="p-price-table-scroll js-show c-fade c-fade--up">
+          <table class="p-price-table p-price-table__base">
+            <caption class="u-visually-hidden">
+              梱包キット一箱あたりの料金表
+            </caption>
+            <tr class="p-price-table-tr">
+              <th class="p-price-table-th">サイズ</th>
+              <th class="p-price-table-td" scope="col">
+                <span class="p-price-base_text-size">S</span>サイズ
+              </th>
+              <th class="p-price-table-td" scope="col">
+                <span class="p-price-base_text-size">M</span>サイズ
+              </th>
+              <th class="p-price-table-td" scope="col">
+                <span class="p-price-base_text-size">L</span>サイズ
+              </th>
+            </tr>
+            <tr class="p-price-table-tr">
+              <th class="p-price-table-th" scope="row">料金</th>
+              <td class="p-price-table-td">
+                <span class="p-price-table_text-price">3,000</span>円
+              </td>
+              <td class="p-price-table-td">
+                <span class="p-price-table_text-price">6,000</span>円
+              </td>
+              <td class="p-price-table-td">
+                <span class="p-price-table_text-price">9,000</span>円
+              </td>
+            </tr>
+            <tr class="p-price-table-tr">
+              <th class="p-price-table-th p-price-base_unit" scope="row">
+                内寸：単位cm <span class="u-br">(長さ × 幅 × 深さ)</span>
+              </th>
+              <td class="p-price-table-td">59× 39 × 53</td>
+              <td class="p-price-table-td">59× 39 × 53</td>
+              <td class="p-price-table-td">59× 39 × 53</td>
+            </tr>
+          </table>
+        </div>
+
+        <p class="p-price-table_title js-show c-fade c-fade--up">
+          料金に含まれるもの
+        </p>
+
+        <table
+          class="p-price-table p-price-table__include js-show c-fade c-fade--up"
+        >
+          <caption class="u-visually-hidden">
+            料金に含まれるもの
+          </caption>
+          <tr class="p-price-table-tr">
+            <th class="p-price-table-th" scope="row">メンテナンス</th>
+            <td class="p-price-table-td">
+              商品の状態に応じて、クリーニング・消毒・簡単な清掃などを行います。
+            </td>
+          </tr>
+          <tr class="p-price-table-tr">
+            <th class="p-price-table-th" scope="row">写真撮影</th>
+            <td class="p-price-table-td">出品に使用する写真を撮影します。</td>
+          </tr>
+          <tr class="p-price-table-tr">
+            <th class="p-price-table-th" scope="row">商品説明文の作成</th>
+            <td class="p-price-table-td">
+              商品の特徴や状態を分かりやすくまとめます。
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="p-price-option l-container">
+      <h2
+        class="c-page-section-title js-section-title js-show c-fade c-fade--up"
+      >
+        おまかせ出品料金
+      </h2>
+      <p class="p-price-option_catch js-show c-fade c-fade--up">
+        出品から発送までの作業料金。
+      </p>
+
+      <div class="p-price-option_contents">
+        <table
+          class="p-price-table p-price-option-table js-show c-fade c-fade--up"
+        >
+          <caption class="u-visually-hidden">
+            おまかせ出品料金
+          </caption>
+          <tr class="p-price-table-tr">
+            <th class="p-price-table-th" scope="row">１商品あたり</th>
+            <td class="p-price-table-td">
+              <span class="p-price-table_text-price">700</span>円
+            </td>
+          </tr>
+        </table>
+
+        <p class="p-price-table_title js-show c-fade c-fade--up">
+          おまかせ出品料金
+        </p>
+
+        <table
+          class="p-price-table p-price-table__include js-show c-fade c-fade--up"
+        >
+          <caption class="u-visually-hidden">
+            おまかせ出品料金
+          </caption>
+          <tr class="p-price-table-tr">
+            <th class="p-price-table-th" scope="row">出品</th>
+            <td class="p-price-table-td">出品商品の登録作業を行います。</td>
+          </tr>
+          <tr class="p-price-table-tr">
+            <th class="p-price-table-th" scope="row">購入者対応</th>
+            <td class="p-price-table-td">
+              問い合わせがあった場合、対応いたします。
+            </td>
+          </tr>
+          <tr class="p-price-table-tr">
+            <th class="p-price-table-th" scope="row">梱包・発送</th>
+            <td class="p-price-table-td">
+              商品が売れた場合、梱包・発送をいたします。
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="p-price-point l-container">
+      <h2
+        class="c-page-section-title js-section-title js-show c-fade c-fade--up"
+      >
+        安心ポイント
+      </h2>
+      <div class="p-price-point_contents">
+        <ul class="p-price-point_list">
+          <li
+            class="p-price-point_item js-price-point js-show c-fade c-fade--up"
+          >
+            <p class="p-price-point_number">Point01</p>
+            <p class="p-price-point_text">お見積りまでは無料</p>
+          </li>
+          <li class="p-price-point_item js-price-point c-fade c-fade--up">
+            <p class="p-price-point_number">Point02</p>
+            <p class="p-price-point_text">
+              お見積り確認後に <span class="u-br">作業開始</span>
+            </p>
+          </li>
+          <li class="p-price-point_item js-price-point c-fade c-fade--up">
+            <p class="p-price-point_number">Point03</p>
+            <p class="p-price-point_text">
+              追加料金がある場合は <span class="u-br">事前にご案内</span>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="c-cta">
+      <div class="c-cta_image">
+        <img
+          src="./image/cta.png"
+          width="929"
+          height="590"
+          alt="CTA"
+          decoding="async"
+        />
+      </div>
+      <div>
+        <div class="c-cta_text01_wrapper">
+          <p class="c-cta_text01">手放す前に</p>
+        </div>
+
+        <p class="c-cta_text02">
+          まずは<span class="u-br c-cta_text03">チェック</span>
+        </p>
+        <div class="c-cta_button">
+          <p class="c-cta_text04">出品できるか、無料でチェックしてみよう！</p>
+          <a href="#" class="c-cta_link">無料会員登録はこちら！</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

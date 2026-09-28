@@ -1,0 +1,139 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/breakpoints" as g;
+/*!
+project > howtouse
+------------------------------
+*/
+
+.p-howtouse-step {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  @include g.mq() {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
+}
+
+.p-howtouse-step_catch {
+  margin-top: 20px;
+  font-size: 32px;
+  font-weight: $fw-semi-bold;
+}
+
+.p-howtouse-step_list {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  @include g.mq() {
+    gap: 72px;
+  }
+}
+
+.p-howtouse-step_item {
+  width: 100%;
+  counter-increment: step-item;
+  display: grid;
+  align-items: flex-start;
+  gap: 12px;
+  grid-template-columns: 100px 1fr;
+
+  @include g.mq() {
+    align-items: center;
+    gap: 40px;
+    grid-template-columns: 160px 1fr;
+  }
+  &::before {
+    content: "0" counter(step-item);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: $color-accent;
+
+    font-family: $font-family-en;
+    font-size: 64px;
+    font-weight: $fw-bold;
+    line-height: 1;
+    color: $color-white;
+    display: grid;
+    place-items: center;
+    @include g.mq() {
+      width: 160px;
+      height: 160px;
+      font-size: 104px;
+    }
+  }
+}
+
+.p-howtouse-step_free {
+  width: 100%;
+  display: block;
+  background-color: $color-background;
+  text-align: center;
+  font-size: 32px;
+  font-weight: $fw-semi-bold;
+  color: $color-primary;
+}
+
+.p-howtouse-step_text {
+  margin-bottom: 18px;
+}
+
+.p-howtouse-option {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  @include g.mq() {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
+}
+
+.p-howtouse-option_catch {
+  margin-top: 20px;
+  font-size: 32px;
+  font-weight: $fw-semi-bold;
+}
+
+.p-howtouse-option_list {
+  margin-inline: auto;
+  max-width: 1048px;
+  display: grid;
+  //grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+
+  @include g.mq(card) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+  }
+  gap: 24px;
+  place-items: center;
+  @include g.mq() {
+    gap: 48px;
+  }
+}
+
+.p-howtouse-option-item {
+  height: 100%;
+  max-width: 500px;
+  border-radius: 30px;
+  border: 8px solid $color-accent;
+  padding: 24px;
+  @include g.mq() {
+    padding: 34px;
+  }
+}
+
+.p-howtouse-option-title {
+  font-family: $font-family-bold;
+  font-size: 24px;
+  font-weight: $fw-bold;
+  color: $color-primary;
+  margin-bottom: 18px;
+  @include g.mq() {
+    font-size: 32px;
+  }
+}
+
+.p-howtouse-option-text {
+}

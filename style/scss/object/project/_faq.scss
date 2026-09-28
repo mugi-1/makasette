@@ -1,0 +1,91 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/breakpoints" as g;
+/*!
+project > faq
+------------------------------
+*/
+
+.p-faq-product {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  @include g.mq() {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
+}
+
+.p-faq-contents {
+  margin-inline: auto;
+  margin-top: 40px;
+}
+
+.p-faq-item {
+  border-radius: 100vh;
+  border: 4px solid $color-accent;
+  padding: 16px;
+  margin-bottom: 24px;
+
+  &[open] {
+    border-radius: 20px;
+  }
+}
+
+.p-faq-question {
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 40px 1fr 24px;
+  gap: 32px;
+  align-items: center;
+  cursor: pointer;
+
+  &::before {
+    content: "Q";
+    font-family: $font-family-bold;
+    font-size: 32px;
+    font-weight: $fw-bold;
+    color: $color-white;
+
+    display: grid;
+    place-content: center;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color-accent;
+  }
+
+  &::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../../image/p-faq-icon-plus.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .p-faq-item[open] & {
+      background-image: url(../../../../image/p-faq-icon-minus.png);
+    }
+  }
+}
+
+.p-faq-answer {
+  margin-left: 72px;
+  margin-top: 18px;
+
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  margin-top: 0;
+
+  transition:
+    height 0.3s ease,
+    opacity 0.3s ease,
+    margin-top 0.3s ease;
+}

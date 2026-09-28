@@ -1,0 +1,66 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/breakpoints" as g;
+/*!
+component > section-title
+------------------------------
+*/
+
+.c-page-title {
+  padding-top: 160px;
+
+  @include g.mq() {
+    padding-top: 270px;
+    margin-bottom: 45px;
+  }
+}
+
+.c-page-title_en {
+  width: 310px;
+  max-width: 100%;
+  font-family: $font-family-bold;
+  text-transform: uppercase;
+  font-weight: $fw-bold;
+
+  font-size: 34px;
+  line-height: 1;
+  color: $color-primary;
+  position: relative;
+  transform: rotate(-2deg);
+  margin-bottom: 10px;
+
+  @include g.mq() {
+    width: 639px;
+    font-size: 72px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 30px;
+    background-color: #fcbd01;
+    border-radius: 10px;
+    clip-path: polygon(0 50%, 1% 41%, 94% 0%, 95% 6%, 100% 100%, 0 100%);
+    position: absolute;
+    bottom: -8px;
+
+    left: 0;
+    transform: rotate(2deg);
+    z-index: $z-index-negative;
+    @include g.mq() {
+      bottom: -16px;
+      height: 50px;
+    }
+  }
+}
+
+.c-page-title_ja {
+  width: 310px;
+  max-width: 100%;
+  font-size: 24px;
+  font-weight: $fw-semi-bold;
+  text-align: right;
+  @include g.mq() {
+    width: 639px;
+  }
+}

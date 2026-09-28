@@ -1,0 +1,46 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/breakpoints" as g;
+/*!
+component > button
+------------------------------
+*/
+
+/*
+  @media (any-hover: hover) {
+    &:hover {
+
+    }
+  }
+  @include g.mq() {ßß
+  }
+*/
+
+.c-button {
+  margin-inline: auto;
+  width: 300px;
+  height: 80px;
+  padding: 25px 22px 25px 50px;
+  background-color: $color-primary;
+  border-radius: 20px;
+
+  font-family: $font-family-bold;
+  font-size: 24px;
+  color: $color-white;
+  letter-spacing: 0.11em;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  display: flex;
+  gap: 18px;
+  align-items: center;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 14px solid $color-white;
+  }
+}

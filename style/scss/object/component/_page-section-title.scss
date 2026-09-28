@@ -1,0 +1,62 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/breakpoints" as g;
+/*!
+component > page-section-title
+------------------------------
+*/
+
+.c-page-section-title {
+  font-family: $font-family-bold;
+  font-size: 32px;
+
+  line-height: 1;
+  color: $color-primary;
+  display: flex;
+  align-items: flex-end;
+  @include g.mq() {
+    font-size: 56px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+
+    width: 40px;
+    aspect-ratio: 72 / 102;
+
+    background-image: url(../../image/page-section-title-deco.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include g.mq() {
+      width: 72px;
+    }
+  }
+}
+
+.c-page-section-title.is-show {
+  &::after {
+    // ここでチョンチョンを動かす
+    animation: deco-animation 0.3s ease-out;
+    animation-delay: 0.8s;
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes deco-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) rotate(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(20deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}

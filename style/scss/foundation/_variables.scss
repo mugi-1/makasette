@@ -1,0 +1,42 @@
+// ==========================================
+// カラー設定（Color）
+// ==========================================
+
+$color-primary: #fd7325;
+$color-accent: #fcbd01;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-background: #ffe8dc;
+
+// ==========================================
+// フォント設定（Font Family）
+// ==========================================
+
+$font-family-base: "Hiragino Kaku Gothic ProN", sans-serif;
+$font-family-bold:
+  "Hiragino Kaku Gothic StdN", "Hiragino Sans", "Yu Gothic", "Meiryo",
+  sans-serif;
+$font-family-en: "Barlow Condensed", sans-serif;
+
+// ==========================================
+// フォントサイズ（Font Size）
+// ==========================================
+$fw-light: 300; /* Figma: Light */
+$fw-regular: 400; /* Figma: Regular */
+$fw-medium: 500; /* Figma: Medium */
+$fw-semi-bold: 600; /* Figma: Bold */
+$fw-bold: 800; /* Figma: Bold */
+
+// ==========================================
+// ブレイクポイント（Breakpoint）
+// ==========================================
+// レスポンシブ切り替え用
+$breakpoint-sp: 768px;
+
+// ==========================================
+// z-index
+// ==========================================
+
+$z-index-header: 30;
+$z-index-default: 1;
+$z-index-negative: -1;
