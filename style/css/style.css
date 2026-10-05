@@ -206,21 +206,12 @@ body {
 layout > header
 ------------------------------
 */
-/*
-  @media (any-hover: hover) {
-    &:hover {
-
-    }
-  }
-  @include g.mq() {
-  }
-*/
 .l-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 10px;
-  padding-inline: 30px;
+  padding-inline: 10px;
   font-weight: 600;
   width: 100%;
   background-color: #ffffff;
@@ -229,7 +220,17 @@ layout > header
 }
 .l-header--top {
   background-color: transparent;
-  margin-top: 20px;
+  margin-top: 0;
+}
+@media screen and (min-width: 768px) {
+  .l-header--top {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .l-header {
+    padding-inline: 30px;
+  }
 }
 @media screen and (min-width: 960px) {
   .l-header {
@@ -255,22 +256,10 @@ layout > header
   position: fixed;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s;
-}
-@media screen and (min-width: 960px) {
-  .l-header_nav {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    margin-left: auto;
-  }
-}
-.is-open .l-header_nav {
-  opacity: 1;
-  visibility: visible;
+  transition: opacity 0.8s, visibility 0s linear 0.3s;
   height: 100vh;
   width: 100vw;
-  padding: 100px;
+  padding: 125px 100px 100px 100px;
   top: 0;
   left: 0;
   z-index: -1;
@@ -279,6 +268,25 @@ layout > header
   justify-content: flex-end;
   background-color: #fcbd01;
   color: #ffffff;
+}
+@media screen and (min-width: 960px) {
+  .l-header_nav {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    margin-left: auto;
+    width: auto;
+    height: auto;
+    padding: 0;
+    display: block;
+    background-color: transparent;
+    color: #000000;
+  }
+}
+.is-open .l-header_nav {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s linear 0s;
 }
 
 .l-header_account-list {
@@ -301,6 +309,15 @@ layout > header
   }
 }
 
+.l-header_account-link {
+  transition: color 0.3s ease;
+}
+@media (any-hover: hover) {
+  .l-header_account-link:hover {
+    color: #fd7325;
+  }
+}
+
 .l-header_menu-list {
   display: flex;
   flex-direction: column;
@@ -312,6 +329,33 @@ layout > header
     flex-direction: row;
     gap: 50px;
     padding-bottom: 0;
+  }
+}
+
+.l-header_menu-link {
+  position: relative;
+}
+.l-header_menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: #fcbd01;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.l-header_menu-link[aria-current=page] {
+  color: #fd7325;
+}
+@media (any-hover: hover) {
+  .l-header_menu-link:hover {
+    color: #fd7325;
+  }
+  .l-header_menu-link:hover::after {
+    transform: scaleX(1);
   }
 }
 
@@ -362,6 +406,7 @@ layout > header
 
 .l-header.is-scrolled {
   background-color: #ffffff;
+  margin-top: 0;
 }
 .l-header.is-scrolled .l-header_logo-hidden {
   display: block;
@@ -371,15 +416,18 @@ layout > header
 layout > footer
 ------------------------------
 */
-/*
-  @media (any-hover: hover) {
-    &:hover {
+.l-footer {
+  width: 100%;
+  margin-inline: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
 
-    }
-  }
-  @include g.mq() {ßß
-  }
-*/
+.l-footer_copyright {
+  font-size: 14px;
+}
+
 /*!
 layout > container
 ------------------------------
@@ -422,6 +470,8 @@ component > button
   display: flex;
   gap: 18px;
   align-items: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 .c-button::after {
   content: "";
@@ -431,6 +481,15 @@ component > button
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
   border-left: 14px solid #ffffff;
+  transition: transform 0.3s ease;
+}
+@media (any-hover: hover) {
+  .c-button:hover {
+    opacity: 0.7;
+  }
+  .c-button:hover::after {
+    transform: translateX(5px);
+  }
 }
 
 /*!
@@ -454,7 +513,7 @@ component > cta
 }
 
 .c-cta_text01_wrapper {
-  width: 112%;
+  width: 120%;
   margin-left: auto;
   border-radius: 0px 0px 260px 160px;
   background-color: #ffffff;
@@ -529,6 +588,18 @@ component > cta
   }
 }
 
+.c-cta_link-wrapper {
+  margin-right: 2.43vw;
+}
+@media screen and (min-width: 768px) {
+  .c-cta_link-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 5.57vh;
+  }
+}
+
 .c-cta_link {
   display: block;
   background-color: #fd7325;
@@ -545,15 +616,23 @@ component > cta
   text-align: center;
   box-shadow: 5px 6px 0 0 #fd7325;
   margin-bottom: 3vh;
-  margin-right: 2.43vw;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 @media screen and (min-width: 768px) {
   .c-cta_link {
-    position: absolute;
-    bottom: 0;
-    right: 0;
     box-shadow: 10px 12px 0 0 #fd7325;
-    margin-bottom: 5.57vh;
+  }
+}
+@media (any-hover: hover) {
+  .c-cta_link:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 3px 0 0 #fd7325;
+  }
+}
+@media screen and (any-hover: hover) and (min-width: 768px) {
+  .c-cta_link:hover {
+    transform: translate(5px, 6px);
+    box-shadow: 5px 6px 0 0 #fd7325;
   }
 }
 
@@ -604,7 +683,7 @@ component > page-section-title
 */
 .c-page-section-title {
   font-family: "Hiragino Kaku Gothic StdN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 1;
   color: #fd7325;
   display: flex;
@@ -618,7 +697,7 @@ component > page-section-title
 .c-page-section-title::after {
   content: "";
   display: block;
-  width: 40px;
+  width: 35px;
   aspect-ratio: 72/102;
   background-image: url(../../image/page-section-title-deco.png);
   background-size: cover;
@@ -868,7 +947,7 @@ component > animation
 }
 
 .c-pop-in.is-show {
-  animation: pop-in-animation 0.5s ease-out;
+  animation: pop-in-animation 0.3s ease-out;
   animation-fill-mode: both;
   animation-delay: var(--delay, 0s);
 }
@@ -1316,7 +1395,7 @@ project > top
 }
 
 .p-top-price_button {
-  margin-top: 80px;
+  margin-top: 48px;
 }
 
 .p-top-reassurance {
@@ -1416,12 +1495,12 @@ project > service
   display: grid;
   width: 100%;
   grid-template-columns: 1fr;
-  margin-top: 40px;
 }
 @media screen and (min-width: 768px) {
   .p-service-about_container {
     grid-template-columns: 23.2% 25% 45.2%;
     column-gap: 3%;
+    margin-top: 40px;
   }
 }
 
@@ -1512,7 +1591,7 @@ project > service
 }
 
 .p-service-about_problem01.is-show .p-service-about_problem01-text {
-  animation: fadeIn-animation 0.6s ease-out;
+  animation: fadeIn-animation 0.3s ease-out;
   animation-fill-mode: both;
   animation-delay: 0.3s;
 }
@@ -1522,14 +1601,13 @@ project > service
 }
 
 .p-service-about_problem02.is-show .p-service-about_problem02-text {
-  animation: fadeIn-animation 0.6s ease-out;
+  animation: fadeIn-animation 0.3s ease-out;
   animation-fill-mode: both;
-  animation-delay: 0.9s;
+  animation-delay: 0.3s;
 }
 .p-service-about_problem02.is-show::after {
   animation: problem-bounce-animation 0.3s ease-out;
   animation-fill-mode: both;
-  animation-delay: 0.6s;
 }
 
 @keyframes problem-bounce-animation {
@@ -1599,6 +1677,13 @@ project > service
 
 .p-service-work_catch {
   margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .p-service-work_catch {
+    font-size: 32px;
+  }
 }
 
 .p-service-work_list {
@@ -1618,7 +1703,8 @@ project > service
 
 .p-service-work_item {
   max-width: 500px;
-  min-width: 360px;
+  width: 48%;
+  min-width: 340px;
   width: 48%;
   border: 8px solid #fcbd01;
   border-radius: 30px;
@@ -1702,17 +1788,25 @@ project > service
   left: 4.18%;
   bottom: -53px;
 }
-.p-service-reccomend_item:nth-of-type(5)::before {
+.p-service-reccomend_item:nth-of-type(3)::before, .p-service-reccomend_item:nth-of-type(5)::before {
   right: 10.45%;
   left: auto;
 }
-.p-service-reccomend_item:nth-of-type(5)::after {
+.p-service-reccomend_item:nth-of-type(3)::after, .p-service-reccomend_item:nth-of-type(5)::after {
   right: 4.18%;
   left: auto;
 }
 @media screen and (min-width: 768px) {
   .p-service-reccomend_item {
     margin-bottom: 53px;
+  }
+  .p-service-reccomend_item:nth-of-type(3)::before {
+    left: 10.45%;
+    bottom: -27px;
+  }
+  .p-service-reccomend_item:nth-of-type(3)::after {
+    left: 4.18%;
+    bottom: -53px;
   }
   .p-service-reccomend_item:nth-of-type(1) {
     grid-column: 2;
@@ -1764,10 +1858,17 @@ project > service
 
 .p-service-items_catch {
   margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .p-service-items_catch {
+    font-size: 32px;
+  }
 }
 
 .p-service-items_list {
-  margin-top: 80px;
+  margin-top: 40px;
   margin-inline: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1775,6 +1876,7 @@ project > service
 }
 @media screen and (min-width: 768px) {
   .p-service-items_list {
+    margin-top: 84px;
     grid-template-columns: repeat(5, 1fr);
   }
 }
@@ -1813,10 +1915,16 @@ project > service
   width: auto;
   height: auto;
 }
+.p-service-items_image--small img {
+  max-width: 85%;
+  max-height: 85%;
+}
 
 .p-service-items_text {
   text-align: center;
   align-self: flex-end;
+  padding: 4px;
+  font-weight: 800;
 }
 
 /*!
@@ -1836,12 +1944,17 @@ project > howtouse
 
 .p-howtouse-step_catch {
   margin-top: 20px;
-  font-size: 32px;
+  font-size: 20px;
   font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .p-howtouse-step_catch {
+    font-size: 32px;
+  }
 }
 
 .p-howtouse-step_list {
-  margin-top: 80px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1850,6 +1963,7 @@ project > howtouse
 @media screen and (min-width: 768px) {
   .p-howtouse-step_list {
     gap: 72px;
+    margin-top: 84px;
   }
 }
 
@@ -1917,11 +2031,17 @@ project > howtouse
 
 .p-howtouse-option_catch {
   margin-top: 20px;
-  font-size: 32px;
+  font-size: 20px;
   font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .p-howtouse-option_catch {
+    font-size: 32px;
+  }
 }
 
 .p-howtouse-option_list {
+  margin-top: 40px;
   margin-inline: auto;
   max-width: 1048px;
   display: grid;
@@ -1940,6 +2060,7 @@ project > howtouse
 @media screen and (min-width: 768px) {
   .p-howtouse-option_list {
     gap: 48px;
+    margin-top: 84px;
   }
 }
 
@@ -1998,19 +2119,21 @@ project > price
 
 .p-price-structure_item {
   margin-inline: auto;
-  margin-top: 140px;
+  margin-top: 110px;
   width: 70%;
   padding: 50px 43px;
   border-radius: 20px;
   border: 4px solid #fcbd01;
   position: relative;
+  isolation: isolate;
+  z-index: -1;
 }
 .p-price-structure_item:not(:nth-of-type(3))::after {
   content: "";
   display: inline-block;
   width: 40px;
   height: 60px;
-  background-image: url(../../../../image/p-price-icon-arrow.png);
+  background-image: url(../../image/p-price-icon-arrow.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2024,13 +2147,14 @@ project > price
     width: auto;
     margin-right: 50px;
     margin-left: 65px;
+    margin-top: 140px;
   }
   .p-price-structure_item:not(:nth-of-type(3))::after {
     content: "";
     display: inline-block;
     width: 40px;
     height: 60px;
-    background-image: url(../../../../image/p-price-icon-arrow.png);
+    background-image: url(../../image/p-price-icon-arrow.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2043,20 +2167,29 @@ project > price
 }
 
 .p-price-structure_badge {
-  width: 136px;
-  height: 130px;
+  width: 80px;
+  height: 80px;
   background-color: #ffffff;
   display: grid;
   place-items: center;
   border-radius: 50%;
   border: 4px solid #fcbd01;
   font-family: "Hiragino Kaku Gothic StdN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 36px;
+  font-size: 24px;
   letter-spacing: 0.06em;
   color: #fcbd01;
   position: absolute;
-  top: -65px;
-  left: -65px;
+  top: -40px;
+  left: -40px;
+}
+@media screen and (min-width: 768px) {
+  .p-price-structure_badge {
+    font-size: 32px;
+    width: 110px;
+    height: 110px;
+    top: -60px;
+    left: -60px;
+  }
 }
 .p-price-structure_badge__free {
   border: 4px solid #fd7325;
@@ -2080,6 +2213,10 @@ project > price
     transform: rotate(-10deg);
   }
 }
+.p-price-structure_text {
+  font-weight: 600;
+}
+
 .p-price-structure_text_color {
   color: #fd7325;
 }
@@ -2097,8 +2234,13 @@ project > price
 
 .p-price-base_catch {
   margin-top: 20px;
-  font-size: 32px;
+  font-size: 20px;
   font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .p-price-base_catch {
+    font-size: 32px;
+  }
 }
 
 .p-price-base_contents {
@@ -2107,9 +2249,15 @@ project > price
 
 .p-price-base_text {
   margin-top: 40px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 25px;
+}
+@media screen and (min-width: 768px) {
+  .p-price-base_text {
+    font-size: 24px;
+    margin-top: 84px;
+  }
 }
 
 .p-price-table_title {
@@ -2248,8 +2396,13 @@ project > price
 
 .p-price-option_catch {
   margin-top: 20px;
-  font-size: 32px;
+  font-size: 20px;
   font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .p-price-option_catch {
+    font-size: 32px;
+  }
 }
 
 .p-price-option_contents {
@@ -2263,6 +2416,11 @@ project > price
   width: 100%;
   margin-top: 40px;
   margin-bottom: 60px;
+}
+@media screen and (min-width: 768px) {
+  .p-price-option-table {
+    margin-top: 84px;
+  }
 }
 .p-price-option-table .p-price-table-tr .p-price-table-th,
 .p-price-option-table .p-price-table-tr .p-price-table-td {
@@ -2291,15 +2449,20 @@ project > price
 .p-price-point_contents {
   max-width: 800px;
   margin-inline: auto;
-  margin-top: 90px;
 }
 
 .p-price-point_list {
+  margin-top: 64px;
   display: flex;
   justify-content: center;
   column-gap: clamp(20px, -71.43px + 11.9vw, 100px);
   row-gap: 78px;
   flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  .p-price-point_list {
+    margin-top: 108px;
+  }
 }
 
 .p-price-point_item {
@@ -2334,7 +2497,7 @@ project > price
 
 .p-price-point_item.is-show .p-price-point_number::after {
   animation: deco-animation 0.3s ease-out;
-  animation-delay: 0.8s;
+  animation-delay: 0.3s;
   animation-fill-mode: both;
 }
 
@@ -2376,6 +2539,11 @@ project > faq
 .p-faq-contents {
   margin-inline: auto;
   margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  .p-faq-contents {
+    margin-top: 84px;
+  }
 }
 
 .p-faq-item {

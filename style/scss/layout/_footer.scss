@@ -6,12 +6,15 @@ layout > footer
 ------------------------------
 */
 
-/*
-  @media (any-hover: hover) {
-    &:hover {
+.l-footer {
+  width: 100%;
 
-    }
-  }
-  @include g.mq() {ßß
-  }
-*/
+  margin-inline: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.l-footer_copyright {
+  font-size: 14px;
+}

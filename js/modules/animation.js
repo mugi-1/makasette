@@ -26,14 +26,14 @@ export const initAnimation = () => {
     const delayInterval = Number(group.dataset.delayInterval);
 
     delayItems.forEach((item, index) => {
-      item.style.setProperty("--delay", index * delayInterval + "s");
+      const delay = index * delayInterval;
+      item.style.setProperty("--delay", delay.toFixed(2) + "s");
     });
   });
 };
 
 export const showNext = (currentItem, nextItem, eventName, filterName) => {
   const handleEnd = (e) => {
-    console.log(eventName, e.propertyName, e.animationName, e.target);
     if (eventName === "transitionend" && e.propertyName !== filterName) {
       return;
     }

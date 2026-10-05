@@ -4,21 +4,12 @@
 layout > header
 ------------------------------
 */
-/*
-  @media (any-hover: hover) {
-    &:hover {
-
-    }
-  }
-  @include g.mq() {
-  }
-*/
 .l-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 10px;
-  padding-inline: 30px;
+  padding-inline: 10px;
   font-weight: $fw-semi-bold;
   width: 100%;
   background-color: $color-white;
@@ -27,8 +18,15 @@ layout > header
 
   &--top {
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 0;
+    @include g.mq() {
+      margin-top: 20px;
+    }
   }
+  @include g.mq() {
+    padding-inline: 30px;
+  }
+
   @include g.mq(nav) {
     padding-top: 0;
   }
@@ -49,30 +47,45 @@ layout > header
   position: fixed;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s;
+  transition:
+    opacity 0.8s,
+    visibility 0s linear 0.3s;
+
+  height: 100vh;
+  width: 100vw;
+  padding: 125px 100px 100px 100px;
+
+  top: 0;
+  left: 0;
+  z-index: $z-index-negative;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+
+  background-color: $color-accent;
+  color: $color-white;
+
   @include g.mq(nav) {
     position: static;
     opacity: 1;
     visibility: visible;
     margin-left: auto;
+
+    width: auto;
+    height: auto;
+    padding: 0;
+    display: block;
+    background-color: transparent;
+    color: $color-black;
   }
 
   .is-open & {
     opacity: 1;
     visibility: visible;
-    height: 100vh;
-    width: 100vw;
-    padding: 100px;
 
-    top: 0;
-    left: 0;
-    z-index: $z-index-negative;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-
-    background-color: $color-accent;
-    color: $color-white;
+    transition:
+      opacity 0.3s ease,
+      visibility 0s linear 0s;
   }
 }
 .l-header_account-list {
@@ -96,9 +109,13 @@ layout > header
 }
 
 .l-header_account-link {
-}
+  transition: color 0.3s ease;
 
-.l-header_menu {
+  @media (any-hover: hover) {
+    &:hover {
+      color: $color-primary;
+    }
+  }
 }
 
 .l-header_menu-list {
@@ -117,6 +134,36 @@ layout > header
 }
 
 .l-header_menu-link {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: 100%;
+    height: 2px;
+    background-color: $color-accent;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  &[aria-current="page"] {
+    color: $color-primary;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: $color-primary;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
 }
 
 .l-header_hamburger-button {
@@ -171,6 +218,7 @@ layout > header
 
 .l-header.is-scrolled {
   background-color: $color-white;
+  margin-top: 0;
 
   .l-header_logo-hidden {
     display: block;

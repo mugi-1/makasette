@@ -17,6 +17,10 @@ project > faq
 .p-faq-contents {
   margin-inline: auto;
   margin-top: 40px;
+
+  @include g.mq() {
+    margin-top: 84px;
+  }
 }
 
 .p-faq-item {

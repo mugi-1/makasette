@@ -16,18 +16,22 @@ project > howtouse
 
 .p-howtouse-step_catch {
   margin-top: 20px;
-  font-size: 32px;
+  font-size: 20px;
   font-weight: $fw-semi-bold;
+  @include g.mq() {
+    font-size: 32px;
+  }
 }
 
 .p-howtouse-step_list {
-  margin-top: 80px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 32px;
   @include g.mq() {
     gap: 72px;
+    margin-top: 84px;
   }
 }
 
@@ -91,11 +95,14 @@ project > howtouse
 
 .p-howtouse-option_catch {
   margin-top: 20px;
-  font-size: 32px;
+  font-size: 20px;
   font-weight: $fw-semi-bold;
+  @include g.mq() {
+    font-size: 32px;
+  }
 }
-
 .p-howtouse-option_list {
+  margin-top: 40px;
   margin-inline: auto;
   max-width: 1048px;
   display: grid;
@@ -110,6 +117,7 @@ project > howtouse
   place-items: center;
   @include g.mq() {
     gap: 48px;
+    margin-top: 84px;
   }
 }
 
@@ -133,7 +141,4 @@ project > howtouse
   @include g.mq() {
     font-size: 32px;
   }
-}
-
-.p-howtouse-option-text {
 }

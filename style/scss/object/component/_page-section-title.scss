@@ -7,7 +7,7 @@ component > page-section-title
 
 .c-page-section-title {
   font-family: $font-family-bold;
-  font-size: 32px;
+  font-size: 30px;
 
   line-height: 1;
   color: $color-primary;
@@ -21,7 +21,7 @@ component > page-section-title
     content: "";
     display: block;
 
-    width: 40px;
+    width: 35px;
     aspect-ratio: 72 / 102;
 
     background-image: url(../../image/page-section-title-deco.png);

@@ -175,7 +175,7 @@ component > animation
 }
 
 .c-pop-in.is-show {
-  animation: pop-in-animation 0.5s ease-out;
+  animation: pop-in-animation 0.3s ease-out;
   animation-fill-mode: both;
   animation-delay: var(--delay, 0s);
 }

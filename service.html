@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow" />
     <title>Makasette</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,7 +42,12 @@
         </ul>
         <ul class="l-header_menu-list">
           <li class="l-header_menu-item">
-            <a href="./service.html" class="l-header_menu-link">service</a>
+            <a
+              href="./service.html"
+              class="l-header_menu-link"
+              aria-current="page"
+              >service</a
+            >
           </li>
           <li class="l-header_menu-item">
             <a href="./how-to-use.html" class="l-header_menu-link"
@@ -195,7 +200,7 @@
       </h2>
       <ul
         class="p-service-reccomend_list js-delay-group"
-        data-delay-interval="0.5"
+        data-delay-interval="0.2"
       >
         <li class="p-service-reccomend_item js-show js-delay c-pop-in">
           <p class="p-service-reccomend_text">
@@ -258,7 +263,7 @@
           <p class="p-service-items_text">衣服</p>
         </li>
         <li class="p-service-items_item js-show js-delay c-bounce">
-          <div class="p-service-items_image">
+          <div class="p-service-items_image p-service-items_image--small">
             <img
               src="./image/p-service-items03.png"
               width="120"
@@ -270,7 +275,7 @@
           <p class="p-service-items_text">書類</p>
         </li>
         <li class="p-service-items_item js-show js-delay c-bounce">
-          <div class="p-service-items_image">
+          <div class="p-service-items_image p-service-items_image--small">
             <img
               src="./image/p-service-items04.png"
               width="120"
@@ -282,7 +287,7 @@
           <p class="p-service-items_text">食器</p>
         </li>
         <li class="p-service-items_item js-show js-delay c-bounce">
-          <div class="p-service-items_image">
+          <div class="p-service-items_image p-service-items_image--small">
             <img
               src="./image/p-service-items05.png"
               width="120"
@@ -296,7 +301,7 @@
       </ul>
     </section>
     <div class="c-cta">
-      <div class="c-cta_image">
+      <div class="c-cta_image js-show c-fade c-fade--soft-left">
         <img
           src="./image/cta.png"
           width="929"
@@ -306,18 +311,29 @@
         />
       </div>
       <div>
-        <div class="c-cta_text01_wrapper">
-          <p class="c-cta_text01">手放す前に</p>
-        </div>
+        <div class="js-show js-cta-copy c-fade c-fade--up">
+          <div class="c-cta_text01_wrapper">
+            <p class="c-cta_text01">手放す前に</p>
+          </div>
 
-        <p class="c-cta_text02">
-          まずは<span class="u-br c-cta_text03">チェック</span>
-        </p>
+          <p class="c-cta_text02">
+            まずは<span class="u-br c-cta_text03 js-emphasis c-emphasis"
+              >チェック</span
+            >
+          </p>
+        </div>
         <div class="c-cta_button">
-          <p class="c-cta_text04">出品できるか、無料でチェックしてみよう！</p>
-          <a href="#" class="c-cta_link">無料会員登録はこちら！</a>
+          <p class="c-cta_text04 js-cta-description c-fade c-fade--up">
+            出品できるか、無料でチェックしてみよう！
+          </p>
+          <div class="c-cta_link-wrapper js-cta-button c-pop">
+            <a href="#" class="c-cta_link"> 無料会員登録はこちら！ </a>
+          </div>
         </div>
       </div>
     </div>
+    <footer class="l-footer">
+      <small class="l-footer_copyright"> &copy; 2026 MAKASETTE </small>
+    </footer>
   </body>
 </html>
