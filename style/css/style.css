@@ -463,6 +463,7 @@ component > button
   border-radius: 20px;
   font-family: "Hiragino Kaku Gothic StdN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 24px;
+  font-weight: 600;
   color: #ffffff;
   letter-spacing: 0.11em;
   line-height: 1.2;
@@ -684,6 +685,7 @@ component > page-section-title
 .c-page-section-title {
   font-family: "Hiragino Kaku Gothic StdN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 30px;
+  font-weight: 600;
   line-height: 1;
   color: #fd7325;
   display: flex;
