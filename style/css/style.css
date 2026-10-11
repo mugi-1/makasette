@@ -253,6 +253,12 @@ layout > header
 }
 
 .l-header_nav {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.l-header_menu {
   position: fixed;
   opacity: 0;
   visibility: hidden;
@@ -270,11 +276,12 @@ layout > header
   color: #ffffff;
 }
 @media screen and (min-width: 960px) {
-  .l-header_nav {
+  .l-header_menu {
     position: static;
     opacity: 1;
     visibility: visible;
     margin-left: auto;
+    z-index: auto;
     width: auto;
     height: auto;
     padding: 0;
@@ -283,7 +290,7 @@ layout > header
     color: #000000;
   }
 }
-.is-open .l-header_nav {
+.is-open .l-header_menu {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s ease, visibility 0s linear 0s;
@@ -291,22 +298,18 @@ layout > header
 
 .l-header_account-list {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 @media screen and (min-width: 960px) {
   .l-header_account-list {
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 8px;
     margin-bottom: 20px;
   }
 }
 
-@media screen and (min-width: 960px) {
-  .l-header_account-item:first-child::after {
-    content: "|";
-  }
+.l-header_account-item:first-child::after {
+  content: "|";
 }
 
 .l-header_account-link {
@@ -360,6 +363,7 @@ layout > header
 }
 
 .l-header_hamburger-button {
+  justify-self: flex-end;
   width: 50px;
   height: 50px;
   background-color: #fcbd01;
@@ -368,6 +372,7 @@ layout > header
   position: relative;
   margin-left: auto;
   z-index: 1;
+  margin-bottom: 10px;
 }
 @media screen and (min-width: 960px) {
   .l-header_hamburger-button {
@@ -434,9 +439,21 @@ layout > container
 */
 .l-container {
   padding-inline: 20px;
+  margin-inline: auto;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .l-container {
+    max-width: 1200px;
+    padding-inline: clamp(20px, 14.88vw - 94.28px, 120px);
+  }
+}
+
+.l-container-fluid {
+  padding-inline: 20px;
+}
+@media screen and (min-width: 768px) {
+  .l-container-fluid {
     padding-inline: clamp(20px, 14.88vw - 94.28px, 120px);
   }
 }
@@ -655,8 +672,7 @@ component > top-section-title
   .c-top-section-title {
     width: clamp(300px, 202.5px + 25vw, 565px);
     height: clamp(189px, 126.6px + 16vw, 357px);
-    margin-left: 30px;
-    margin: 48px 0 0 30px;
+    margin: 48px 0 0 0;
     transform: rotate(-10deg);
   }
 }
@@ -666,15 +682,15 @@ component > top-section-title
 
 .c-top-section-title_text {
   font-family: "Hiragino Kaku Gothic StdN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 800;
   color: #ffffff;
   transform: rotate(10deg);
 }
 @media screen and (min-width: 768px) {
   .c-top-section-title_text {
-    font-size: clamp(40px, 25.18px + 3.8vw, 80px);
-    line-height: 1.2;
+    font-size: clamp(36px, 3.3vw + 23.14px, 66px);
+    line-height: 1.4;
   }
 }
 
@@ -1132,6 +1148,11 @@ project > hero
 project > top
 ------------------------------
 */
+.p-top-inner {
+  max-width: 1300px;
+  margin-inline: auto;
+}
+
 .p-top-about {
   width: 100%;
   padding-top: 64px;
@@ -1144,25 +1165,12 @@ project > top
   }
 }
 
-.p-top-about_title {
-  margin-top: 44px;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 1.4;
-}
-@media screen and (min-width: 768px) {
-  .p-top-about_title {
-    padding-left: 172px;
-    padding-top: 41px;
-    font-size: 40px;
-    white-space: nowrap;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .p-top-about_contents {
+    width: 100%;
+    margin-inline: auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: auto 1fr auto;
     column-gap: 70px;
     justify-content: center;
     align-items: flex-start;
@@ -1184,8 +1192,25 @@ project > top
     display: block;
     max-width: 450px;
     padding-top: 116px;
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 1;
+  }
+}
+
+.p-top-about_title {
+  margin-top: 44px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+@media screen and (min-width: 768px) {
+  .p-top-about_title {
+    grid-column: 1/4;
+    grid-row: 2;
+    padding-left: 172px;
+    padding-top: 41px;
+    font-size: 40px;
+    white-space: nowrap;
   }
 }
 
@@ -1196,8 +1221,8 @@ project > top
 }
 @media screen and (min-width: 768px) {
   .p-top-about_text {
-    grid-column: 1/3;
-    grid-row: 2;
+    grid-column: 1/4;
+    grid-row: 3;
     padding-left: 172px;
   }
 }
@@ -1207,8 +1232,8 @@ project > top
 }
 @media screen and (min-width: 768px) {
   .p-top-about_button {
-    grid-column: 1/3;
-    grid-row: 3;
+    grid-column: 1/4;
+    grid-row: 4;
     padding-left: 172px;
   }
   .p-top-about_button .c-button {
@@ -1222,6 +1247,7 @@ project > top
 }
 @media screen and (min-width: 768px) {
   .p-top-howtouse {
+    width: 100%;
     padding-top: 96px;
     padding-bottom: 96px;
   }
@@ -1234,6 +1260,8 @@ project > top
 @media screen and (min-width: 768px) {
   .p-top-howtouse_list {
     margin-top: 46px;
+    width: fit-content;
+    max-width: 100%;
   }
 }
 
@@ -1281,6 +1309,12 @@ project > top
 @media screen and (min-width: 768px) {
   .p-top-price {
     padding-bottom: 96px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .p-top-price_container {
+    margin-inline: auto;
   }
 }
 
@@ -1406,6 +1440,7 @@ project > top
 }
 @media screen and (min-width: 768px) {
   .p-top-reassurance {
+    width: 100%;
     padding-top: 96px;
     padding-bottom: 96px;
   }
@@ -1439,7 +1474,8 @@ project > top
     transform: rotate(-2deg);
   }
   .p-top-reassurance_item:nth-of-type(even) {
-    justify-self: flex-end;
+    width: fit-content;
+    margin-left: auto;
   }
   .p-top-reassurance_item:nth-of-type(even) .p-top-reassurance_text {
     transform: rotate(2deg);
@@ -1847,6 +1883,16 @@ project > service
   }
 }
 
+.p-service-reccomend_text {
+  font-weight: 600;
+  font-size: clamp(16px, 2.12vw + 7.75px, 24px);
+}
+@media screen and (min-width: 768px) {
+  .p-service-reccomend_text {
+    font-size: clamp(18px, 1.39vw + 7.29px, 24px);
+  }
+}
+
 .p-service-items {
   margin-top: 80px;
   margin-bottom: 80px;
@@ -2123,7 +2169,7 @@ project > price
   margin-inline: auto;
   margin-top: 110px;
   width: 70%;
-  padding: 50px 43px;
+  padding: 50px 29px;
   border-radius: 20px;
   border: 4px solid #fcbd01;
   position: relative;
@@ -2178,6 +2224,7 @@ project > price
   border: 4px solid #fcbd01;
   font-family: "Hiragino Kaku Gothic StdN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 24px;
+  font-weight: bold;
   letter-spacing: 0.06em;
   color: #fcbd01;
   position: absolute;

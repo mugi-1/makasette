@@ -44,6 +44,11 @@ layout > header
   display: block;
 }
 .l-header_nav {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+.l-header_menu {
   position: fixed;
   opacity: 0;
   visibility: hidden;
@@ -70,6 +75,7 @@ layout > header
     opacity: 1;
     visibility: visible;
     margin-left: auto;
+    z-index: auto;
 
     width: auto;
     height: auto;
@@ -90,21 +96,18 @@ layout > header
 }
 .l-header_account-list {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 10px;
+
   @include g.mq(nav) {
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 8px;
     margin-bottom: 20px;
   }
 }
 
 .l-header_account-item {
-  @include g.mq(nav) {
-    &:first-child::after {
-      content: "|";
-    }
+  &:first-child::after {
+    content: "|";
   }
 }
 
@@ -167,6 +170,7 @@ layout > header
 }
 
 .l-header_hamburger-button {
+  justify-self: flex-end;
   width: 50px;
   height: 50px;
   background-color: $color-accent;
@@ -175,6 +179,7 @@ layout > header
   position: relative;
   margin-left: auto;
   z-index: $z-index-default;
+  margin-bottom: 10px;
 
   @include g.mq(nav) {
     display: none;

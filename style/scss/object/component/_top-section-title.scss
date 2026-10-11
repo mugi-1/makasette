@@ -18,8 +18,7 @@ component > top-section-title
   @include g.mq() {
     width: clamp(300px, calc(202.5px + 25vw), 565px);
     height: clamp(189px, calc(126.6px + 16vw), 357px);
-    margin-left: 30px;
-    margin: 48px 0 0 30px;
+    margin: 48px 0 0 0;
     transform: rotate(-10deg);
   }
 
@@ -30,14 +29,13 @@ component > top-section-title
 
 .c-top-section-title_text {
   font-family: $font-family-bold;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: $fw-bold;
   color: $color-white;
 
   transform: rotate(10deg);
   @include g.mq() {
-    // font-size: 80px;
-    font-size: clamp(40px, calc(25.18px + 3.8vw), 80px);
-    line-height: 1.2;
+    font-size: clamp(36px, calc(3.3vw + 23.14px), 66px);
+    line-height: 1.4;
   }
 }

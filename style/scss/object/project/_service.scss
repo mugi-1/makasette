@@ -185,9 +185,6 @@ project > service
   }
 }
 
-.p-service-about_text {
-}
-
 .p-service-about_image {
   @include g.mq() {
     margin-top: 50px;
@@ -374,6 +371,15 @@ project > service
       align-self: flex-start;
       justify-self: flex-end;
     }
+  }
+}
+
+.p-service-reccomend_text {
+  font-weight: $fw-semi-bold;
+  font-size: clamp(16px, calc(2.12vw + 7.75px), 24px);
+
+  @include g.mq() {
+    font-size: clamp(18px, calc(1.39vw + 7.29px), 24px);
   }
 }
 

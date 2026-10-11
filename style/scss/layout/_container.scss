@@ -12,6 +12,18 @@ layout > container
 
 .l-container {
   padding-inline: 20px;
+  margin-inline: auto;
+  width: 100%;
+
+  @include g.mq() {
+    max-width: 1200px;
+
+    padding-inline: clamp(20px, calc(14.88vw - 94.28px), 120px);
+  }
+}
+
+.l-container-fluid {
+  padding-inline: 20px;
 
   @include g.mq() {
     padding-inline: clamp(20px, calc(14.88vw - 94.28px), 120px);

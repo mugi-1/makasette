@@ -35,7 +35,7 @@
           />
         </a>
       </h1>
-      <nav class="l-header_nav js-menu-nav">
+      <nav class="l-header_nav">
         <ul class="l-header_account-list">
           <li class="l-header_account-item">
             <a href="#" class="l-header_account-link">ログイン</a>
@@ -44,32 +44,34 @@
             <a href="#" class="l-header_account-link">会員登録</a>
           </li>
         </ul>
-        <ul class="l-header_menu-list">
-          <li class="l-header_menu-item">
-            <a href="./service.html" class="l-header_menu-link">service</a>
-          </li>
-          <li class="l-header_menu-item">
-            <a href="./how-to-use.html" class="l-header_menu-link"
-              >how to use</a
-            >
-          </li>
-          <li class="l-header_menu-item">
-            <a href="./price.html" class="l-header_menu-link">price</a>
-          </li>
-          <li class="l-header_menu-item">
-            <a href="./faq.html" class="l-header_menu-link">faq</a>
-          </li>
-        </ul>
+        <div class="l-header_menu js-menu-nav">
+          <ul class="l-header_menu-list">
+            <li class="l-header_menu-item">
+              <a href="./service.html" class="l-header_menu-link">service</a>
+            </li>
+            <li class="l-header_menu-item">
+              <a href="./how-to-use.html" class="l-header_menu-link"
+                >how to use</a
+              >
+            </li>
+            <li class="l-header_menu-item">
+              <a href="./price.html" class="l-header_menu-link">price</a>
+            </li>
+            <li class="l-header_menu-item">
+              <a href="./faq.html" class="l-header_menu-link">faq</a>
+            </li>
+          </ul>
+        </div>
+        <button
+          class="l-header_hamburger-button js-hamburger-button"
+          type="button"
+          aria-label="メニューを開く"
+        >
+          <span class="l-header_humburger-line"></span>
+          <span class="l-header_humburger-line"></span>
+          <span class="l-header_humburger-line"></span>
+        </button>
       </nav>
-      <button
-        class="l-header_hamburger-button js-hamburger-button"
-        type="button"
-        aria-label="メニューを開く"
-      >
-        <span class="l-header_humburger-line"></span>
-        <span class="l-header_humburger-line"></span>
-        <span class="l-header_humburger-line"></span>
-      </button>
     </header>
     <div class="js-hero p-hero">
       <div class="p-hero_header">
@@ -85,7 +87,7 @@
         </div>
       </div>
 
-      <div class="p-hero_content l-container">
+      <div class="p-hero_content l-container-fluid">
         <ul class="p-hero_content-list">
           <li class="p-hero_content-item">
             <p class="p-hero_content-text">きれいに整える！</p>
@@ -127,193 +129,210 @@
       </div>
     </div>
     <section class="p-top-about js-delay-group" data-delay-interval="0.15">
-      <div class="p-top-about_contents l-container">
-        <div class="p-top-about_image">
-          <img
-            src="./image/top-about.png"
-            width="450"
-            height="394"
-            alt=""
-            decoding="async"
-          />
-        </div>
+      <div class="l-container-fluid">
+        <div class="p-top-inner">
+          <div class="p-top-about_contents">
+            <div class="p-top-about_image">
+              <img
+                src="./image/top-about.png"
+                width="450"
+                height="394"
+                alt=""
+                decoding="async"
+              />
+            </div>
 
-        <div class="js-show js-delay c-fade c-fade--up">
-          <div class="p-top-about_header">
-            <div class="c-top-section-title">
-              <h2 class="c-top-section-title_text">
-                マカセッテ<span class="u-br">とは?</span>
-              </h2>
+            <div class="p-top-about_header js-show js-delay c-fade c-fade--up">
+              <div class="c-top-section-title">
+                <h2 class="c-top-section-title_text">
+                  マカセッテ<span class="u-br">とは?</span>
+                </h2>
+              </div>
+            </div>
+            <p class="p-top-about_title js-show js-delay c-fade c-fade--up">
+              送るだけで、<span class="u-br">出品準備が整う！</span>
+            </p>
+            <p class="p-top-about_text js-show js-delay c-fade c-fade--up">
+              商品のチェックから、メンテナンス、撮影、紹介文の作成までお手伝いします。
+            </p>
+            <div class="p-top-about_button js-show js-delay c-fade c-fade--up">
+              <a href="./service.html" class="c-button">view more</a>
             </div>
           </div>
         </div>
-        <p class="p-top-about_title js-show js-delay c-fade c-fade--up">
-          送るだけで、<span class="u-br">出品準備が整う！</span>
-        </p>
-      </div>
-      <p
-        class="p-top-about_text l-container js-show js-delay c-fade c-fade--up"
-      >
-        商品のチェックから、メンテナンス、撮影、紹介文の作成までお手伝いします。
-      </p>
-      <div class="p-top-about_button js-show js-delay c-fade c-fade--up">
-        <a href="./service.html" class="c-button">view more</a>
       </div>
     </section>
-    <section class="p-top-howtouse l-container">
-      <div class="js-show c-fade c-fade--up">
-        <div class="c-top-section-title c-top-section-title__right">
-          <h2 class="c-top-section-title_text">
-            どうやって<span class="u-br">利用するの？</span>
-          </h2>
-        </div>
-      </div>
+    <section class="p-top-howtouse">
+      <div class="l-container-fluid">
+        <div class="p-top-inner">
+          <div class="js-show c-fade c-fade--up">
+            <div class="c-top-section-title c-top-section-title__right">
+              <h2 class="c-top-section-title_text">
+                どうやって<span class="u-br">利用するの？</span>
+              </h2>
+            </div>
+          </div>
 
-      <ul class="p-top-howtouse_list">
-        <li class="p-top-howtouse_item js-show c-fade c-fade--left">
-          <p class="p-top-howtouse_number">01.</p>
-          <p class="p-top-howtouse_text">
-            会員登録後、マイページよりお申し込み
-          </p>
-        </li>
-        <li class="p-top-howtouse_item js-show c-fade c-fade--left">
-          <p class="p-top-howtouse_number">02.</p>
-          <p class="p-top-howtouse_text">梱包して、発送</p>
-        </li>
-        <li class="p-top-howtouse_item js-show c-fade c-fade--left">
-          <p class="p-top-howtouse_number">03.</p>
-          <p class="p-top-howtouse_text">商品のチェック・見積もり</p>
-        </li>
-        <li class="p-top-howtouse_item js-show c-fade c-fade--left">
-          <p class="p-top-howtouse_number">04.</p>
-          <p class="p-top-howtouse_text">出品準備完了</p>
-        </li>
-        <li class="p-top-howtouse_item js-show c-fade c-fade--left">
-          <p class="p-top-howtouse_option">+ OPTION</p>
-          <p class="p-top-howtouse_text">
-            ご希望の場合は、出品・発送作業も承ります!
-          </p>
-        </li>
-      </ul>
-      <div class="p-top-howtouse_button js-show c-fade c-fade--up">
-        <a href="./how-to-use.html" class="c-button">view more</a>
+          <ul class="p-top-howtouse_list">
+            <li class="p-top-howtouse_item js-show c-fade c-fade--left">
+              <p class="p-top-howtouse_number">01.</p>
+              <p class="p-top-howtouse_text">
+                会員登録後、マイページよりお申し込み
+              </p>
+            </li>
+            <li class="p-top-howtouse_item js-show c-fade c-fade--left">
+              <p class="p-top-howtouse_number">02.</p>
+              <p class="p-top-howtouse_text">梱包して、発送</p>
+            </li>
+            <li class="p-top-howtouse_item js-show c-fade c-fade--left">
+              <p class="p-top-howtouse_number">03.</p>
+              <p class="p-top-howtouse_text">商品のチェック・見積もり</p>
+            </li>
+            <li class="p-top-howtouse_item js-show c-fade c-fade--left">
+              <p class="p-top-howtouse_number">04.</p>
+              <p class="p-top-howtouse_text">出品準備完了</p>
+            </li>
+            <li class="p-top-howtouse_item js-show c-fade c-fade--left">
+              <p class="p-top-howtouse_option">+ OPTION</p>
+              <p class="p-top-howtouse_text">
+                ご希望の場合は、出品・発送作業も承ります!
+              </p>
+            </li>
+          </ul>
+          <div class="p-top-howtouse_button js-show c-fade c-fade--up">
+            <a href="./how-to-use.html" class="c-button">view more</a>
+          </div>
+        </div>
       </div>
     </section>
-    <section class="p-top-price l-container">
-      <div class="js-show c-fade c-fade--up">
-        <div class="c-top-section-title">
-          <h2 class="c-top-section-title_text">
-            費用は<span class="u-br">どれくらい？</span>
-          </h2>
-        </div>
-      </div>
-      <p class="p-top-price_text js-show c-fade c-fade--up">
-        梱包キットのサイズにより異なります。
-      </p>
-      <div class="p-top-price_list js-delay-group" data-delay-interval="0.2">
-        <div class="p-top-price_item">
-          <div class="p-top-price_image js-show js-delay c-bounce">
-            <img
-              src="./image/top-price-box.png"
-              width="106"
-              height="80"
-              alt="ダンボールSサイズイメージ"
-              decoding="async"
-            />
+    <section class="p-top-price">
+      <div class="l-container-fluid">
+        <div class="p-top-inner">
+          <div class="p-top-price_container">
+            <div class="js-show c-fade c-fade--up">
+              <div class="c-top-section-title">
+                <h2 class="c-top-section-title_text">
+                  費用は<span class="u-br">どれくらい？</span>
+                </h2>
+              </div>
+            </div>
+            <p class="p-top-price_text js-show c-fade c-fade--up">
+              梱包キットのサイズにより異なります。
+            </p>
+            <div
+              class="p-top-price_list js-delay-group"
+              data-delay-interval="0.2"
+            >
+              <div class="p-top-price_item">
+                <div class="p-top-price_image js-show js-delay c-bounce">
+                  <img
+                    src="./image/top-price-box.png"
+                    width="106"
+                    height="80"
+                    alt="ダンボールSサイズイメージ"
+                    decoding="async"
+                  />
+                </div>
+                <p class="p-top-price_size"><span>S</span>サイズ</p>
+                <p class="p-top-price_price">3,000<span>円</span></p>
+              </div>
+              <div class="p-top-price_item">
+                <div class="p-top-price_image js-show js-delay c-bounce">
+                  <img
+                    src="./image/top-price-box.png"
+                    width="151"
+                    height="114"
+                    alt="ダンボールMサイズイメージ"
+                    decoding="async"
+                  />
+                </div>
+                <p class="p-top-price_size"><span>M</span>サイズ</p>
+                <p class="p-top-price_price">6,000<span>円</span></p>
+              </div>
+              <div class="p-top-price_item">
+                <div class="p-top-price_image js-show js-delay c-bounce">
+                  <img
+                    src="./image/top-price-box.png"
+                    width="196"
+                    height="148"
+                    alt="ダンボールLサイズイメージ"
+                    decoding="async"
+                  />
+                </div>
+                <p class="p-top-price_size"><span>L</span>サイズ</p>
+                <p class="p-top-price_price">9,000<span>円</span></p>
+              </div>
+            </div>
+            <div class="p-top-price_caption js-show c-fade c-fade--up">
+              <p class="p-top-price_caption-text1">
+                出品準備費に含まれるもの：商品のクリーニング・商品の撮影・商品説明文の作成
+              </p>
+              <p class="p-top-price_caption-text2">
+                オプションの出品・発送作業には、別途料金がかかります。
+              </p>
+            </div>
+            <div class="p-top-price_button js-show c-fade c-fade--up">
+              <a href="./price.html" class="c-button">view more</a>
+            </div>
           </div>
-          <p class="p-top-price_size"><span>S</span>サイズ</p>
-          <p class="p-top-price_price">3,000<span>円</span></p>
         </div>
-        <div class="p-top-price_item">
-          <div class="p-top-price_image js-show js-delay c-bounce">
-            <img
-              src="./image/top-price-box.png"
-              width="151"
-              height="114"
-              alt="ダンボールMサイズイメージ"
-              decoding="async"
-            />
-          </div>
-          <p class="p-top-price_size"><span>M</span>サイズ</p>
-          <p class="p-top-price_price">6,000<span>円</span></p>
-        </div>
-        <div class="p-top-price_item">
-          <div class="p-top-price_image js-show js-delay c-bounce">
-            <img
-              src="./image/top-price-box.png"
-              width="196"
-              height="148"
-              alt="ダンボールLサイズイメージ"
-              decoding="async"
-            />
-          </div>
-          <p class="p-top-price_size"><span>L</span>サイズ</p>
-          <p class="p-top-price_price">9,000<span>円</span></p>
-        </div>
-      </div>
-      <div class="p-top-price_caption js-show c-fade c-fade--up">
-        <p class="p-top-price_caption-text1">
-          出品準備費に含まれるもの：商品のクリーニング・商品の撮影・商品説明文の作成
-        </p>
-        <p class="p-top-price_caption-text2">
-          オプションの出品・発送作業には、別途料金がかかります。
-        </p>
-      </div>
-      <div class="p-top-price_button js-show c-fade c-fade--up">
-        <a href="./price.html" class="c-button">view more</a>
       </div>
     </section>
 
-    <section class="p-top-reassurance l-container">
-      <div class="c-top-section-title c-top-section-title__right">
-        <h2 class="c-top-section-title_text">
-          マカセッテの<span class="u-br">3つの安心</span>
-        </h2>
+    <section class="p-top-reassurance">
+      <div class="l-container-fluid">
+        <div class="p-top-inner">
+          <div class="c-top-section-title c-top-section-title__right">
+            <h2 class="c-top-section-title_text">
+              マカセッテの<span class="u-br">3つの安心</span>
+            </h2>
+          </div>
+          <ul
+            class="p-top-reassurance_list js-delay-group"
+            data-delay-interval="0.6"
+          >
+            <li class="p-top-reassurance_item js-show c-pop">
+              <p
+                class="p-top-reassurance_number js-delay js-number-swing c-number-swing c-number-swing--right"
+              >
+                01
+              </p>
+              <p class="p-top-reassurance_text">
+                チェック・見積もり<span class="p-top-reassurance_bold u-br"
+                  >無料!</span
+                >
+              </p>
+            </li>
+            <li class="p-top-reassurance_item js-show c-pop">
+              <p
+                class="p-top-reassurance_number js-delay js-number-swing c-number-swing c-number-swing--left"
+              >
+                02
+              </p>
+              <p class="p-top-reassurance_text">
+                納得
+                <span class="u-br-sp">いただいてから</span
+                ><span class="p-top-reassurance_bold">作業開始!</span>
+              </p>
+            </li>
+            <li
+              class="p-top-reassurance_item js-show c-pop js-number-swing-trigger"
+            >
+              <p
+                class="p-top-reassurance_number js-delay js-number-swing c-number-swing c-number-swing--right"
+              >
+                03
+              </p>
+              <p class="p-top-reassurance_text">
+                <span class="u-br">売上金は</span
+                ><span class="p-top-reassurance_bold u-br-sp"
+                  >100%<span class="u-br-sp">あなたへ!</span></span
+                >
+              </p>
+            </li>
+          </ul>
+        </div>
       </div>
-      <ul
-        class="p-top-reassurance_list js-delay-group"
-        data-delay-interval="0.6"
-      >
-        <li class="p-top-reassurance_item js-show c-pop">
-          <p
-            class="p-top-reassurance_number js-delay js-number-swing c-number-swing c-number-swing--right"
-          >
-            01
-          </p>
-          <p class="p-top-reassurance_text">
-            チェック・見積もり<span class="p-top-reassurance_bold u-br"
-              >無料!</span
-            >
-          </p>
-        </li>
-        <li class="p-top-reassurance_item js-show c-pop">
-          <p
-            class="p-top-reassurance_number js-delay js-number-swing c-number-swing c-number-swing--left"
-          >
-            02
-          </p>
-          <p class="p-top-reassurance_text">
-            納得
-            <span class="u-br-sp">いただいてから</span
-            ><span class="p-top-reassurance_bold">作業開始!</span>
-          </p>
-        </li>
-        <li
-          class="p-top-reassurance_item js-show c-pop js-number-swing-trigger"
-        >
-          <p
-            class="p-top-reassurance_number js-delay js-number-swing c-number-swing c-number-swing--right"
-          >
-            03
-          </p>
-          <p class="p-top-reassurance_text">
-            <span class="u-br">売上金は</span
-            ><span class="p-top-reassurance_bold u-br-sp"
-              >100%<span class="u-br-sp">あなたへ!</span></span
-            >
-          </p>
-        </li>
-      </ul>
     </section>
     <div class="c-cta">
       <div class="c-cta_image js-show c-fade c-fade--soft-left">
