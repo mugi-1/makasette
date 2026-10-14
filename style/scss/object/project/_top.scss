@@ -292,17 +292,17 @@ project > top
   align-items: center;
   margin-bottom: 32px;
 
+  &:nth-of-type(1) {
+    .p-top-reassurance_number {
+      letter-spacing: 0.04em;
+    }
+  }
+
   @include g.mq() {
     margin-bottom: 86px;
     gap: 100px;
 
     &:nth-of-type(odd) {
-      // 1, 3, 5...
-
-      // .p-top-reassurance_number {
-      //   transform: rotate(10deg);
-      // }
-
       .p-top-reassurance_text {
         transform: rotate(-2deg);
       }
@@ -326,8 +326,10 @@ project > top
   font-weight: $fw-bold;
   line-height: 1;
   color: $color-accent;
+  width: 98px;
   @include g.mq() {
     font-size: 200px;
+    width: auto;
   }
 }
 

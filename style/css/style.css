@@ -1465,6 +1465,9 @@ project > top
   align-items: center;
   margin-bottom: 32px;
 }
+.p-top-reassurance_item:nth-of-type(1) .p-top-reassurance_number {
+  letter-spacing: 0.04em;
+}
 @media screen and (min-width: 768px) {
   .p-top-reassurance_item {
     margin-bottom: 86px;
@@ -1488,10 +1491,12 @@ project > top
   font-weight: 800;
   line-height: 1;
   color: #fcbd01;
+  width: 98px;
 }
 @media screen and (min-width: 768px) {
   .p-top-reassurance_number {
     font-size: 200px;
+    width: auto;
   }
 }
 
